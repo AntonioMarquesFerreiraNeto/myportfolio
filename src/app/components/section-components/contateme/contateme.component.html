@@ -1,0 +1,33 @@
+<form class="container" (ngSubmit)="submitForm()" [formGroup]="contatoForm" #formDir="ngForm">
+    <div class="header">
+        <h3>Entrar em contato</h3>
+        <a class="close-modal" (click)="dialog.closeAll()"><i class="bi bi-x-lg"></i></a>
+    </div>
+    <div class="body">
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Informe seu nome" formControlName="name">
+            @if(formDir.submitted){
+                <mat-error *ngIf="name.errors?.['minlength']">Mínimo de quatro caracteres!</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="Informe seu e-mail" formControlName="email">
+            @if(formDir.submitted) {
+            <mat-error *ngIf="email.errors?.['email']">E-mail inválido!</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Mensagem</mat-label>
+            <textarea matInput placeholder="Informe sua mensagem" rows="4" formControlName="conteudo"></textarea>
+            @if(formDir.submitted){
+            <mat-error *ngIf="conteudo.errors?.['minlength']">Mínimo de 10 caracteres!</mat-error>
+            }
+        </mat-form-field>
+    </div>
+    <div class="footer">
+        <button type="submit" class="button-class">Enviar</button>
+        <button type="button" (click)="dialog.closeAll()" class="button-class backred">Fechar</button>
+    </div>
+</form>

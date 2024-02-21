@@ -1,0 +1,143 @@
+<h3>My projetcs</h3>
+<div class="myprojects">
+    <div class="myproject">
+        <ngb-carousel>
+            <ng-template ngbSlide *ngFor="let item of imagensBus">
+                <div class="picsum-img-wrapper">
+                    <img class="imagem" [src]="item" alt="Random first slide" />
+                </div>
+            </ng-template>
+        </ngb-carousel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Detalhes
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+                Desenvolvido para defesa de TCC, com o objetivo de gestão de contrato de alocações, no
+                qual realizei todo o processo de desenvolvimento, desde a licitação de requisitos até a
+                entrega final, com o apoio do meu orientador, que possui conhecimento das regras de
+                negócio da área. Tal projeto foi desenvolvido utilizando tecnologias como Angular e
+                TypeScript para o front-end; e .NET, Rest API, EntityFramework e MySQL para o back-end.
+            </p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Links
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="links">
+                <a href="https://github.com/AntonioMarquesFerreiraNeto/front-end-busescontrol" target="_blank">
+                    <i class="fa-brands fa-github"></i> Repositório do front-end do sistema em Angular 16</a>
+                <a href="https://github.com/AntonioMarquesFerreiraNeto/backend-busescontrol" target="_blank">
+                    <i class="fa-brands fa-github"></i> Repositório do back-end do sistema em .NET 7 (Rest API)</a>
+                <a href="https://buscontrol.netlify.app/login" target="_blank">
+                    <i class="fa-solid fa-rocket"></i>
+                    Link da versão publicada do sistema
+                </a>
+            </div>
+        </mat-expansion-panel>
+    </div>
+    <div class="myproject">
+        <ngb-carousel>
+            <ng-template ngbSlide *ngFor="let item of imagensMedical">
+                <div class="picsum-img-wrapper">
+                    <img class="imagem" [src]="item" alt="Random first slide" />
+                </div>
+            </ng-template>
+        </ngb-carousel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Detalhes
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+                Sistema de contexto interno desenvolvido na época do meu estágio para garantir o controle abrangente de registros
+                cirúrgicos de médicos
+                residentes com registro ABRECCV. Este sistema foi concebido para acompanhar meticulosamente o processo
+                de registros cirúrgicos, fornecendo uma plataforma segura e eficiente para os médicos residentes
+                documentarem suas intervenções. A parceria entre nós envolvidos permitiu a criação de uma solução robusta
+                e especializada, atendendo às exigências específicas da área médica. Infelizmente, não posso dar muitos
+                detalhes e nem imagens além das autorizadas por ética e privacidade.
+            </p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Links
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="links">
+                <p>Nenhum link público.</p>
+            </div>
+        </mat-expansion-panel>
+    </div>
+    <div class="myproject">
+        <ngb-carousel>
+            <ng-template ngbSlide *ngFor="let item of imagensGambi">
+                <div class="picsum-img-wrapper">
+                    <img class="imagem" [src]="item" alt="Random first slide" />
+                </div>
+            </ng-template>
+        </ngb-carousel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Detalhes
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+                Projeto desenvolvido em AspNetMVC voltado para leitura e publicação de artigos
+                na área de Tecnologia da Informação de maneira abrangente. Tal sistema permite que o usuário possa
+                explorar e gerir suas próprias publicações, além de ler artigos de outros usuários. Para este projeto,
+                foram utilizadas tecnologias como .NET, C#, EntityFramework, MySQL, AspnetMVC, Razor Page e JavaScript,
+                entre outras.
+            </p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Links
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="links">
+                <a href="https://github.com/AntonioMarquesFerreiraNeto/GambiarraBrasil-FullStack" target="_blank">
+                    <i class="fa-brands fa-github"></i> Repositório do projeto em .NET.
+                </a>
+            </div>
+        </mat-expansion-panel>
+    </div>
+    <div class="myproject">
+        <img class="imagem" src="{{imagensSugar[0]}}">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Detalhes
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+                Projeto desenvolvido em colaboração com especialista para a gestão abrangente de estoque na indústria de açúcar,
+                abrangendo todo o processo relacionado ao produto, produção, safra, entrada, venda, saída e inventário.
+                Este sistema foi meticulosamente concebido para acompanhar todas as etapas do ciclo de vida do estoque,
+                fornecendo uma plataforma robusta e especializada para garantir um controle eficiente e preciso. A
+                parceria entre nós colaboradores permitiu a criação de uma solução adaptada às necessidades específicas
+                da indústria.
+            </p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Links
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="links">
+                <a href="https://github.com/AntonioMarquesFerreiraNeto/SugarProductionManagement" target="_blank">
+                    <i class="fa-brands fa-github"></i> Repositório do projeto em .NET.
+                </a>
+            </div>
+        </mat-expansion-panel>
+    </div>
+</div>

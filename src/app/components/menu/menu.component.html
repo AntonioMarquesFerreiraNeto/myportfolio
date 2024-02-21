@@ -1,0 +1,22 @@
+<nav class="navbar-menu padding-components">
+    <h3>Software <span>Developer</span></h3>
+    <div class="flex-list" *ngIf="!larguraMinima else barstemplate">
+        <div class="list-menu">
+            <a routerLink="/home" class="opcao">Home</a>
+            <a routerLink="/about" class="opcao">About</a>
+            <a routerLink="/projetos" class="opcao">Projects</a>
+            <a href="assets/Currículo - Antonio Marques Ferreira Neto.pdf" class="opcao" download>Curriculum</a>
+        </div>
+        <button (click)="displayFormContate()" class="button-class color-edit">Contate-me</button>
+    </div>
+    <ng-template #barstemplate>
+        <div class="bars-template" [mat-menu-trigger-for]="menu"><i class="fa-solid fa-bars"></i></div>
+        <mat-menu #menu="matMenu">
+            <button routerLink="/home" mat-menu-item>Home</button>
+            <button routerLink="/about" mat-menu-item>About</button>
+            <button routerLink="/projetos" mat-menu-item>Projects</button>
+            <button (click)="displayFormContate()" mat-menu-item>Contate-me</button>
+            <a href="assets/Currículo - Antonio Marques Ferreira Neto.pdf" target="_blank" mat-menu-item>Curriculum</a>
+        </mat-menu>
+    </ng-template>
+</nav>
