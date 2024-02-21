@@ -1,4 +1,4 @@
 export const environment = {
-    urlAPI: "https://formspree.io/f/xvoeajyz",
+    urlAPI: "https://formspree.io/f/mayrogvl",
     production: true
 }
