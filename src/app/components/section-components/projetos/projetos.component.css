@@ -10,7 +10,7 @@
     align-items: first baseline;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 23px;
+    gap: 20px;
     height: 100%;
     width: 100%;
     padding-top: 10px;
@@ -90,9 +90,9 @@ h3 {
     margin-top: 60px !important;
 }
 
-@media(min-width: 1600px) {
+@media(min-width: 1100px) {
     .myproject {
-        width: 32.3%;
+        width: 30%;
     }
 
     .myproject:hover {

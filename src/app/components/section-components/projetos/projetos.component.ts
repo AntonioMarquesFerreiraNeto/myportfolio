@@ -31,11 +31,9 @@ export class ProjetosComponent {
   imagensGambi = [
     'assets/listcardgamb/img00-gamb.png',
     'assets/listcardgamb/img01-gamb.png',
-    'assets/listcardgamb/img02-gamb.png',
     'assets/listcardgamb/img03-gamb.png',
     'assets/listcardgamb/img04-gamb.png',
     'assets/listcardgamb/img05-gamb.png',
-    'assets/listcardgamb/img06-gamb.png',
     'assets/listcardgamb/img07-gamb.png'
   ];
   imagensMedical = [
