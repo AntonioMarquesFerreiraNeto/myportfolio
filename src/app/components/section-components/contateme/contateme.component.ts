@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ContatemeService } from '../../../services/contateme.service';
+import { Contato } from '../../../interfaces/Contato';
 
 @Component({
   selector: 'app-contateme',
@@ -16,7 +17,7 @@ import { ContatemeService } from '../../../services/contateme.service';
 })
 export class ContatemeComponent implements OnInit {
   contatoForm!: FormGroup;
-  constructor(public dialog: MatDialog, private snackBar: MatSnackBar, private testeService: ContatemeService) {
+  constructor(public dialog: MatDialog, private snackBar: MatSnackBar, private contatoService: ContatemeService) {
   }
 
   ngOnInit(): void {
@@ -43,12 +44,24 @@ export class ContatemeComponent implements OnInit {
     if (this.contatoForm.invalid) {
       return;
     }
-
-    this.dialog.closeAll();
-    this.snackBar.open("Mensagem enviada com sucesso!", "✖", {
-      duration: 3000,
-      verticalPosition: 'bottom',
-      horizontalPosition: 'center'
+    const data: Contato = this.contatoForm.value;
+    this.contatoService.EnviarMensagem(data).subscribe({
+      next: () => {
+        this.dialog.closeAll();
+        this.snackBar.open("Mensagem enviada com sucesso!", "✖", {
+          duration: 3000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'center'
+        });
+      },
+      error: () =>{
+        this.dialog.closeAll();
+        this.snackBar.open("Desculpe, não conseguimos processar sua solicitação.", "✖", {
+          duration: 3000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'center'
+        });
+      }
     });
   }
 }
