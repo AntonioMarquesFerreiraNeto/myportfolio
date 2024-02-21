@@ -27,7 +27,7 @@ export class MenuComponent implements OnInit {
   displayFormContate() {
     this.dialog.open(ContatemeComponent, {
       width: '700px',
-      minWidth: '270px',
+      minWidth: '300px',
       height: '80%',
       maxHeight: '100%',
       panelClass: 'fade-in-out',

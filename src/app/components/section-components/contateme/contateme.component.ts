@@ -21,9 +21,9 @@ export class ContatemeComponent implements OnInit {
 
   ngOnInit(): void {
     this.contatoForm = new FormGroup({
-      name: new FormControl('Antonio Marques Ferreira Neto', [Validators.required, Validators.minLength(4)]),
-      email: new FormControl('antoniomarquesfneto@gmail.com', [Validators.required, Validators.email]),
-      conteudo: new FormControl('Olá, Antonio! Tudo bem? Então, gostaria de participar do nosso processo seletivo para vaga de desenvolvedor .NET CORE. ', [Validators.required, Validators.minLength(7)])
+      name: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      conteudo: new FormControl('', [Validators.required, Validators.minLength(7)])
     });
   }
 

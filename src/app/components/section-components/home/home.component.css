@@ -64,17 +64,17 @@ p {
 
 @media(max-width: 670px) {
     img {
-        width: 60%;
-        height: 50%;
+        width: 80%;
+        height: 65%;
     }
 
     .container-pag {
         padding-top: 50px;
         padding-bottom: 50px;
         align-items: center;
-        align-content: flex-start;
+        align-content: center;
         flex-direction: column-reverse;
-        gap: 10px;
+        gap: 30px;
     }
 
     .conteudo {
