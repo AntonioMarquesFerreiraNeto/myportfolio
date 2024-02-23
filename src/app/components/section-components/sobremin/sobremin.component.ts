@@ -1,12 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { fadeInOnEnterAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-sobremin',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './sobremin.component.html',
-  styleUrl: './sobremin.component.css'
+  styleUrl: './sobremin.component.css',
+  animations: [
+    fadeInOnEnterAnimation()
+  ]
 })
 export class SobreminComponent {
 

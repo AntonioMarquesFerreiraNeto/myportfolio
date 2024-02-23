@@ -1,4 +1,4 @@
-<div class="section-components">
+<div class="section-components" [@fadeInOnEnter]>
     <div class="container-pag">
         <div class="conteudo">
             <h3 *ngIf="!trueAboutImagem">Highlights</h3>
@@ -22,7 +22,7 @@
                 <div class="tag">Sql Server</div>
             </div>
         </div>
-        <img src="assets/home imagem.jpg" *ngIf="!trueAboutImagem else cardtemplate">
+        <img src="assets/home-imagem.jpg" *ngIf="!trueAboutImagem else cardtemplate">
         <ng-template #cardtemplate>
             <img src="assets/cardabout.avif" class="aboutcard">
         </ng-template>

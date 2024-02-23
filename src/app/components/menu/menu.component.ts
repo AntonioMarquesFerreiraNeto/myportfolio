@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog'
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class MenuComponent implements OnInit {
   larguraMinima = false;
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog, private router: Router) {
     this.validaResolucaoBolean();
   }
 
@@ -43,5 +43,11 @@ export class MenuComponent implements OnInit {
     } else {
       this.larguraMinima = false;
     }
+  }
+
+  validaRota(nameComponent: string): boolean {
+    const currentRole = this.router.routerState.snapshot.url;
+    const firstSegment = currentRole.split('/')[1];
+    return firstSegment == nameComponent;
   }
 }

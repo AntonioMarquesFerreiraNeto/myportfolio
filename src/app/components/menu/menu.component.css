@@ -1,8 +1,8 @@
-*{
+* {
     margin: 0;
 }
 
-.navbar-menu {
+.mymenu {
     top: 0;
     position: sticky;
     height: 14vh;
@@ -53,11 +53,39 @@ span {
     font-weight: 200;
     text-transform: uppercase;
     font-size: 11pt;
-    transition: 0.7s;
+    position: relative;
+    transition: color 0.5s ease-in-out;
 }
 
-.opcao:hover {
-    color: #0a1e77;
+.opcao::after {
+    content: " ";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    border-radius: 35px;
+    background-color: #5a78fb;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+.opcao:hover::after {
+    width: 99%;
+}
+
+.componentSelect {
+    position: relative;
+}
+
+.componentSelect::after {
+    content: " ";
+    position: absolute;
+    width: 99%;
+    height: 1px;
+    border-radius: 35px;
+    background-color: #5a78fb;
+    bottom: 0;
+    left: 0;
 }
 
 @media(max-width: 800px) {
@@ -65,21 +93,24 @@ span {
         font-size: 10pt;
         gap: 10px;
     }
-    .flex-list{
+
+    .flex-list {
         align-content: space-between;
     }
+
     .opcao {
         font-size: 10pt;
     }
 }
 
-.bars-template{
+.bars-template {
     cursor: pointer;
     font-size: 17pt;
     color: #3b5fff9b;
-    transition: 0.3s;
+    transition: 0.8s ease-in-out;
 }
-.bars-template:hover{
+
+.bars-template:hover {
     color: #2036959b;
     transform: scale(1);
 }

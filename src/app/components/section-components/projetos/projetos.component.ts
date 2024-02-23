@@ -3,12 +3,16 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { fadeInOnEnterAnimation } from 'angular-animations';
 @Component({
   selector: 'app-projetos',
   standalone: true,
   imports: [MatExpansionModule, NgbCarouselModule, CommonModule, FormsModule],
   templateUrl: './projetos.component.html',
-  styleUrl: './projetos.component.css'
+  styleUrl: './projetos.component.css',
+  animations: [
+    fadeInOnEnterAnimation()
+  ]
 })
 export class ProjetosComponent {
   panelOpenState = false;
