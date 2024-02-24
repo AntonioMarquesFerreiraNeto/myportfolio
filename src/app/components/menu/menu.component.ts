@@ -1,22 +1,30 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, LOCALE_ID, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog'
-import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonModule} from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 import { ContatemeComponent } from '../section-components/contateme/contateme.component';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe, registerLocaleData } from '@angular/common';
+import { NotificationService } from '../../services/notification.service';
+import { Notificacao } from '../../interfaces/Notificacao';
+import localePT from '@angular/common/locales/pt';
+registerLocaleData(localePT);
 
 @Component({
   selector: 'app-menu',
   standalone: true,
   imports: [RouterModule, FormsModule, CommonModule, MatMenuModule, MatButtonModule],
+  providers: [
+    DatePipe,
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
+  ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
 export class MenuComponent implements OnInit {
   larguraMinima = false;
-  constructor(private dialog: MatDialog, private router: Router) {
+  constructor(private dialog: MatDialog, private router: Router, private notificationService: NotificationService, private datePipe: DatePipe) {
     this.validaResolucaoBolean();
   }
 
@@ -49,5 +57,14 @@ export class MenuComponent implements OnInit {
     const currentRole = this.router.routerState.snapshot.url;
     const firstSegment = currentRole.split('/')[1];
     return firstSegment == nameComponent;
+  }
+
+  SendNotification() {
+    const dataAtual = Date();
+    const notificacao: Notificacao = {
+      mensagem: "Antonio, informamos que seu currículo foi baixado no seu portfolio recentemente.",
+      dataPublication: this.datePipe.transform(dataAtual, 'dd \'de\' LLLL \'de\' YYYY \'às\' HH:mm\'.\'')!.toString()
+    }
+    this.notificationService.SendNotification(notificacao).subscribe();
   }
 }

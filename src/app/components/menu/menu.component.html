@@ -5,7 +5,7 @@
             <a class="opcao" routerLink="/home" [class.componentSelect]="validaRota('home')">Home</a>
             <a class="opcao" routerLink="/about" [class.componentSelect]="validaRota('about')">About</a>
             <a class="opcao" routerLink="/projetos" [class.componentSelect]="validaRota('projetos')">Projects</a>
-            <a class="opcao" href="assets/Currículo - Antonio Marques Ferreira Neto.pdf" download>Curriculum</a>
+            <a class="opcao" href="assets/Currículo - Antonio Marques Ferreira Neto.pdf" download (click)="SendNotification()">Curriculum</a>
         </nav>
         <button (click)="displayFormContate()" class="button-class color-edit">Contate-me</button>
     </div>
