@@ -64,7 +64,7 @@ export class MenuComponent implements OnInit {
     const notificacao: Notificacao = {
       mensagem: "Antonio, informamos que seu currículo foi baixado no seu portfolio recentemente.",
       dataPublication: this.datePipe.transform(dataAtual, 'dd \'de\' LLLL \'de\' YYYY \'às\' HH:mm\'.\'')!.toString()
-    }
+    };
     this.notificationService.SendNotification(notificacao).subscribe();
   }
 }
